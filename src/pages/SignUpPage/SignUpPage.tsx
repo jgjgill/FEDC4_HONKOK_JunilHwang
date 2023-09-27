@@ -41,9 +41,11 @@ const SignUpPage = () => {
     event.preventDefault();
 
     try {
-      await signUp({ email, fullName, password });
+      await signUp({ email, fullName, password }).then(() => {
+        addToast({content: '회원가입에 성공했습니다!'})
+        navigate(-1);
+      });
 
-      navigate(-1);
     } catch (error) {
       addToast({ content: '회원가입에 실패했습니다!' });
     }
@@ -54,7 +56,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="flex h-full flex-col px-[1.5rem]">
+    <div className="flex h-full flex-col px-6">
       <header className="fixed left-1/2 top-0 flex h-[7.625rem] w-full max-w-[767px] -translate-x-1/2 justify-center">
         <Button
           className="absolute left-5 top-14 flex h-6 w-6 items-center justify-center cs:p-0"

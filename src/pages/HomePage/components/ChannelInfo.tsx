@@ -12,13 +12,17 @@ const ChannelInfo = () => {
           <span className="rounded-[1.25rem] bg-white p-1 px-2 text-[0.625rem] text-sub-red">
             HOT
           </span>
-          <p className="mt-3 text-xs text-gray-100">
+          <p className="mt-3 text-xs text-gray-100 sm:text-sm">
             사람들이 가장 활발하게
             <br />
             이용하는 채널을 확인해보세요!
           </p>
         </div>
-        <img src={seatedManImage} alt="채널 소개 이미지" />
+        <img
+          src={seatedManImage}
+          alt="채널 소개 이미지"
+          className="object-cover"
+        />
       </div>
     </div>
   );
